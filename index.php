@@ -1,6 +1,6 @@
 <?php
 require "config.php";
-//$conn = Database::getInstance();
+//$conn = Database::getInstance(); Class Database for connecting.
 ?>
 <!DOCTYPE html>
 <html>
