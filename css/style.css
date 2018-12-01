@@ -1,0 +1,220 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	font-family: 'Open Sans', Arial, sanf-serif;
+	background: #202020;
+	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+	margin: 0.3em 0 0.7em 0;
+}
+h1 {font-size: 36px;}
+h2 {font-size: 26px;}
+h3 {font-size: 24px;}
+h4 {font-size: 22px;}
+h5 {font-size: 20px;}
+h6 {font-size: 18px;}
+
+ p {
+	 margin: 0 0 1em 0;
+	 font-family: 'Arial', sanf-serif;
+ }
+
+ a {
+ 	text-decoration: none;
+ 	color: black;
+ }
+ a:hover {
+ 	color: #696969;
+ }
+
+
+#wrapper {
+	width: 1080px;
+	height: 1310px;
+	background: #ffffff;
+	margin: 0px auto;
+	border: 1px solid #202020;
+}
+
+.nav {
+	background: #696969;
+	padding: 25px 0;
+	text-align: center;
+	list-style: none;
+}
+
+.nav > li {
+	padding: 0 30px;
+	display: inline-block;
+}
+
+.nav > li > a {
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.nav > li > a:hover {
+	color: #ddd;
+}
+header {
+	background: #fff;
+	text-align: center;
+	border-bottom: 1px solid #696969;
+}
+.welcome {
+	padding: 20px 0;
+}
+
+#sidebar {
+	width: 280px;
+	height: 900px;
+	background: #fff;
+	float: left;
+	text-align: center;
+}
+
+
+input[type="text"]{
+	width: 80%;
+	padding: 7px;
+	border:1 px solid #646464;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type="textarea"]{
+	width: 80%;
+	padding: 7px;
+	border:1 px solid #646464;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type="submit"]{
+	background-color: white;
+    color: black;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding:3px 7px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+input[type="submit"]:hover{
+	background-color: #555555;
+    color: white;
+}
+
+.orders{
+	position:relative;
+	top:100px;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	margin: 30px 0;
+}
+
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+	text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr > td > a {
+	text-decoration: none;
+	color: black;
+}
+
+tr > td > a:hover{
+	color: #696969;
+}
+
+#main {
+	width: 800px;
+	height: 900px;
+	background: #fff;
+	float: left;
+}
+
+#main > p {
+	padding: 10px;
+	margin: 15px 0;
+}
+
+.products {
+	border-collapse: border-box;
+}
+
+
+
+.product {
+	border: 1px solid #696969;
+	border-radius: 10px;
+	position: relative;
+	width: 180px;
+	height: 280px;
+	display:inline-block;
+	margin: 5px 7px;
+	text-align: center;
+}
+.product h5,
+.product p {
+	margin: 0 auto;
+	padding: 1px;
+}
+.center {
+	text-align: center;
+}
+.center input[type="submit"]{
+	background-color: white;
+	color: black;
+	border: 2px solid #555555;
+	padding:8px 14px;
+	font-size: 16px;
+	-webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.center input[type="submit"]:hover{
+	background-color: #555555;
+	color: #fff;
+}
+
+.ftext {
+	width:90%;
+	position: relative;
+	top:80px;
+	left:35px;
+}
+
+#footer {
+	background: #696969;
+	height: 45px;
+	padding: 12px;
+	text-align: center;
+	position:relative;
+	top:50px;
+	clear:both;
+}
+
+
+
+
+
+
