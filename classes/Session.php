@@ -1,5 +1,5 @@
 <?php
-
+//Class session with multiple methods like start, stop, get and set session
 class Session {
 	public static function start(){
 		if(!isset($_SESSION)){

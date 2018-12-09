@@ -1,4 +1,5 @@
 <?php
+//Abstract class with multiple methods for taking all data, taking one data with specified id, update data and delete some data
 abstract class ActiveRecord {
 	public static function getAll($filter=""){
 		$q = mysqli_query(Database::getInstance(),

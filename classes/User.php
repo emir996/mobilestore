@@ -1,5 +1,5 @@
 <?php
-
+//Class user with multiple methods like setSessions, logut and login user
 class User extends ActiveRecord {
 	public static $table = "users";
 	public static $key = "id";

@@ -1,5 +1,5 @@
 <?php
-
+//Database class with methods for connect
 class Database {
 		private static $instance = null;
 		private function __construct(){
