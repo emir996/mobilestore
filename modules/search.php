@@ -1,7 +1,9 @@
 <?php
-
+//Setting parameters for category of product and checking for integer
 $models = isset($_GET['cat']) && is_numeric($_GET['cat'])?$_GET['cat']:1;
+//Making query in database for searching product
 $model = isset($_GET['q'])?"and name_model like '%".$_GET['q']."%'":"";
+//Instantiate class Product and method get all with filtration query
 $product = Product::getAll("where models_id = $models {$model}");
 foreach($product as $rw){
 ?>

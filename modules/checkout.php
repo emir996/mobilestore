@@ -1,3 +1,4 @@
+<!-- form for order product -->
 <div class="orders">
 	<div class="center">
 		<form action="" method="POST">	
@@ -10,7 +11,7 @@
 <?php
 
 
-
+//Checking button and form, processing order fields 
 if(isset($_POST['btn_checkout'])){
 	$name = $_POST['tb_name'];
 	$adress = $_POST['tb_adress'];

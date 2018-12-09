@@ -1,12 +1,13 @@
 <?php
+//Calling Session class and method start session
 Session::start();
 
-
+//checking for global Session and making array
 if(!isset($_SESSION['card'])){
 	$_SESSION['card'] = array();
 }
-
-if(isset($_POST['pid'])&&isset($_POST['quantity'])){
+//Setting Post parameters and giving parameters for shop
+if(isset($_POST['pid']) && isset($_POST['quantity'])){
 	if(isset($_SESSION['card'][$_POST['pid']])){
 		$_SESSION['card'][$_POST['pid']]+=$_POST['quantity'];
 	}else{
@@ -17,6 +18,7 @@ if(isset($_POST['pid'])&&isset($_POST['quantity'])){
 	}
 }
 
+//checking global Session array
 if(empty($_SESSION['card'])){
 	echo "<h4 class='center'>Card is empty.</h4>";
 	return;
@@ -28,7 +30,7 @@ $product_id_string = implode(",",$product_id);
 
 
 
-
+//Instantiate product class and method getAll with filtration query
 $products = Product::getAll("where id in ($product_id_string)");
 foreach ($products as $rw){
 ?>

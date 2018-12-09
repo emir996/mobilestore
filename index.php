@@ -13,7 +13,7 @@ require "config.php";
 
 	<div id="wrapper">
 	
-		<nav>
+		<nav><!-- Navigation bar -->
 		  <ul class="nav">
 			<li><a href="./">Naslovna</a></li>
 			<li><a href="?page=2">Proizvodi</a></li>
@@ -36,11 +36,12 @@ require "config.php";
 			<article class="block">
 				<h3>Pretraga</h3>
 			<div class="form">
-			  <form action="" method="GET">
+			  <form action="" method="GET"><!-- Form for searching products -->
 			  	<input type="hidden" name="page" value="6" />
 			  	<select name="cat">
 			  		<option value=""  selected="selected">Modeli</option>
 			  		<?php
+			  		// Instantiate class Model and calling method getAll from database
 			  		$models = Model::getAll();
 			  		foreach($models as $rw){ ?>
 						<option value="<?php echo $rw->id ?>"><?php echo $rw->name_model; ?></option>
@@ -75,6 +76,7 @@ require "config.php";
 		<div id="main">
 		
 			<?php
+			// Making array with dynamic pages
 				$default_page = (isset($_GET['page']))?$_GET['page']:1;
 				
 				$pages = array(
@@ -102,7 +104,7 @@ require "config.php";
 		
 		</div>
 	
-	</div>
+	</div> <!-- End of wrap div -->
 
 </body>
 </html>

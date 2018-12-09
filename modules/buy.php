@@ -1,8 +1,7 @@
 <?php
-
+//Setting id parameters
 $id = isset($_GET['pid'])&&is_numeric($_GET['pid'])?$_GET['pid']:0;
-//$query = mysqli_query($conn,"select * from products where id = {$id}");
-//$rw=mysqli_fetch_object($query);
+//Instantiate Product class and method getAll with filtration query
 $products = Product::getAll("where id = $id");
 foreach($products as $rw)
 if(!$rw){
@@ -22,6 +21,7 @@ if(!$rw){
 		<p>Availability:<?php echo $rw->availability; ?></p>
 		
 	</div>
+	<!-- Form for order more than one same product -->
 	<form action="?page=3" method="POST">
 		<input type="hidden" name="pid" value="<?php echo $rw->id; ?>" />
 		<input type="number" name="quantity" value="1" /> <input type="submit" value="add" />

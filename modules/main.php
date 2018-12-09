@@ -7,6 +7,7 @@
 			
 			<?php
 			//$query = mysqli_query($conn,"select * from related_products");
+			// Calling class Related and method getAll and loop throw all products
 			$related_products = Related::getAll();
 				foreach($related_products as $rw){
 			?>

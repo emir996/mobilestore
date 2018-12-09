@@ -1,8 +1,7 @@
 <?php
-
+//Setting id parameters
 $id = isset($_GET['pid'])&&is_numeric($_GET['pid'])?$_GET['pid']:0;
-//$query = mysqli_query($conn,"select * from related_products where id = {$id}");
-//$rw=mysqli_fetch_object($query);
+//Instantiate class Related and method getAll with filtration query
 $related_products = Related::getAll("where id = $id");
 foreach($related_products as $rw)
 if(!$rw){
@@ -23,6 +22,7 @@ if(!$rw){
 		<a href="?page=8&pid=<?php echo $rw->id; ?>">Buy now</a>
 	
 	</div>
+	<!-- Form for order more than one same product -->
 	<form action="?page=3" method="POST">
 		<input type="hidden" name="pid" value="<?php echo $rw->id; ?>" />
 		<input type="number" name="quantity" value="1" /> <input type="submit" value="add" />
