@@ -1,16 +1,18 @@
 <?php
 require "../config.php";
-
+//Checking Session and admin status
 if(!Session::get('status')||Session::get('status')!=3){
 	header("location: index.html");
 }
-
+//Instantiate Product class
 $selectedProduct = new Product;
 
+	////Setting Get parameters
 	if(isset($_GET['pid'])){
 		$selectedProduct = Product::get($_GET['pid']);
 	}
 	
+	//Setting button for adding new product
 	if(isset($_POST['btn_add'])){
 		$selectedProduct = new Product;
 		$selectedProduct->name_brand = $_POST['tb_brand'];
@@ -30,6 +32,7 @@ $selectedProduct = new Product;
 		//$selected_id = mysqli_insert_id($conn);
 	}
 	
+	//Setting button for update product
 	if(isset($_POST['btn_update'])){
 		$selectedProduct = Product::get($_POST['selProduct']);
 		$selectedProduct->name_brand = $_POST['tb_brand'];
@@ -47,6 +50,7 @@ $selectedProduct = new Product;
 		//mysqli_query($conn,"update products set name_brand='{$selected_brand}',name_model='{$selected_model}',image='{$selected_image}',price='{$selected_price}',availability='{$selected_availability}',models_id='{$selected_models}' where id= {$selected_id}");
 	}
 
+	//Setting button for deleting product
 	if(isset($_POST['btn_delete'])){
 		$selectedProduct = new Product;
 		$selected_id = $_POST['selProduct'];
@@ -69,12 +73,13 @@ $selectedProduct = new Product;
 	
 	
 ?>	
-	
+<!-- This is form for setting product table in database -->
 <div class="center">	
 <form action="" method="post" enctype="multipart/form-data">
 	<select onchange="if(this.value<0) return; window.location='?pid='+this.value" name="selProduct">
 		<option value="-1">Select brand</option>
 	<?php
+	//Calling Product class and method getAll
 	$allProducts = Product::getAll();
 	?>
 	<?php
@@ -94,6 +99,7 @@ $selectedProduct = new Product;
 	<input type="checkbox" name="cb_availability" <?php echo ($selectedProduct->availability)?"checked":""; ?> /><br />
 	Category:<br/>
 	<?php
+		//Calling Class Model and method getAll
 		$allModels = Model::getAll();
 	?>
 	<select name="sel_brand">

@@ -1,35 +1,18 @@
 <?php
 	require '../config.php';
+	//Checking Session and admin status
 	if(!Session::get('status')||Session::get('status')!=3){
 		header("location: index.html");
 	}
-/*
-$conn = mysqli_connect(DBHOST,DBUSER,DBPASS,DB);
-
-		$selected_id = -1;
-		$selected_brand = "";
-		$selected_model = "";
-		$selected_image = "";
-		$selected_price = "";
-*/
+		//Instantiate class Related
 		$selectedRelated_products = new Related;
 
+	//Setting Get parameters
 	if(isset($_GET['proid'])){
-		/*
-	  $query = mysqli_query($conn,"select * from related_products where id = {$_GET['proid']}");
-	  $rw = mysqli_fetch_object($query);
-	  if($rw){
-		$selected_id = $rw->id;
-		$selected_brand = $rw->name_brand;
-		$selected_model = $rw->name_model;
-		$selected_image = $rw->image;
-		$selected_price = $rw->price;
-	  }
-	  */
 	  $selectedRelated_products = Related::get($_GET['proid']);
 	}
 
-	
+	//Setting button for adding new product
 	if(isset($_POST['btn_add'])){
 		$selectedRelated_products = new Related;
 		$selectedRelated_products->name_brand = $_POST['tb_brand'];
@@ -43,10 +26,8 @@ $conn = mysqli_connect(DBHOST,DBUSER,DBPASS,DB);
 		$selectedRelated_products->price = $_POST['tb_price'];
 		$selectedRelated_products->id = mysqli_insert_id(Database::getInstance());
 		$selectedRelated_products->insert();
-		//mysqli_query($conn,"insert into related_products values (null,'{$selected_brand}','{$selected_model}','{$selected_image}','{$selected_price}')");
-		//$selected_id = mysqli_insert_id($conn);
 	}
-	
+	//Setting button for update product
 	if(isset($_POST['btn_update'])){
 		$selectedRelated_products = Related::get($_POST['sel_product']);
 		$selectedRelated_products->name_brand = $_POST['tb_brand'];
@@ -60,6 +41,7 @@ $conn = mysqli_connect(DBHOST,DBUSER,DBPASS,DB);
 	}
 	}
 	
+	//Setting button for delete product
 	if(isset($_POST['btn_delete'])){
 		$selectedRelated_products = new Related;
 		$selected_id = $_POST['sel_product'];
@@ -75,12 +57,12 @@ $conn = mysqli_connect(DBHOST,DBUSER,DBPASS,DB);
 	}
 ?>
 
-
+<!-- This is form for setting Related_product table in database -->
 <form action="" method="post" enctype="multipart/form-data">
 	<select onchange="if(this.value<0) return; window.location='?proid='+this.value" name="sel_product">
 		<option value="-1">Select brand</option>
 	<?php
-	//$query = mysqli_query($conn,"select * from related_products");
+	//Calling class Related and method getAll
 	$allRelated = Related::getAll();
 	?>
 	<?php
