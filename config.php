@@ -1,4 +1,5 @@
 <?php
+//Parameters for connection with database
 define("DB","mobilestore");
 define("DBHOST","localhost");
 define("DBUSER","root");
