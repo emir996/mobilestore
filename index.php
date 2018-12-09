@@ -23,13 +23,13 @@ require "config.php";
 		  </ul>
 		</nav>
 		
-		<header>
+		<header><!-- HEADER -->
 			<div class="welcome">
 				<a href="index.php"><img src="img/logo.png" alt="Mobile" /></a>
 				<h3>Dobro dosli u prodavnicu telefona</h3>
 				<p>Nudimo iskljucivo nove proizvode</p>
 			</div>
-		</header>
+		</header><!-- END OF HEADER -->
 		
 		<aside id="sidebar">
 		
